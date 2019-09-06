@@ -1,0 +1,80 @@
+\documentclass{article}
+\begin{document}
+
+\section{Pitch 1}
+\textbf{The Idea:  Language as an improvement to existing CrashSim
+Tool}\break
+
+CrashSimulator has already proven effective in finding bugs but there is
+room for improvement.   One area where using the tool could be simplified is in
+writing the checkers and mutators.  To this end, we developed a domain specific
+language based on enhanced regular expressions to simplify this process.
+Using this domain specific language CrashSimulator’s developers and users
+implemented YYY new checkers and mutators and used them to identify ZZZ new bugs
+in real world applications.
+
+\subsection{Contributions}
+\begin{enumerate}
+\item{Design for domain specific language for describing sequences of
+    system calls.}
+\item{Implementation of this design as a new way to write checkers and mutators for
+    the existing CrashSimulator tool}
+\item{Demonstration that these improvements have enhanced CrashSimulator’s ability
+    to find bugs}
+\item{User study evidence that users find this language easier to grasp and more efficient to
+    use than CrashSimulator’s previous way of describing checkers and mutators}
+\end{enumerate}
+
+\section{Pitch 2}
+\textbf{The Idea: We have implemented a language for describing system
+call sequences and proved its usefulness by using it in CrashSim}\break
+
+Many instances of bugs, security problems and malicious activity are
+visible in an application's system call activity.  We can take advantage of
+this fact to identify these problems by identifying specific,
+problematic system call sequences.  To do this, we need a way to describe
+these sequences.  In this work we show that these sequences can be modeled
+using finite automata with registers and offer a way to construct these
+automata using {\tt RELANG}, a new domain specific
+language similar to regular expressions with back
+references.  To illustrate the effectiveness of this approach we
+used {\tt RELANG} to describe the system call sequences used by
+CrashSimulator's checkers and mutators.  CrashSimulator was able to
+identify YYY previously-undiscovered bugs in major applications using
+checkers and mutators written in {\tt RELANG}.  Additionally, we conducted a
+user study that found {\tt RELANG} was both easier to learn and more
+efficient to work with than CrashSimulator's previous Python-based checker
+and mutator description strategy.
+
+
+\section{Contributions}
+\begin{enumerate}
+\item{Demonstration that system call sequences can be recognized by finite
+    automata with registers}
+\item{Design for domain specific language for describing these automata in
+    as regular expressions with back references}
+\item{Implementation of this language using ZZZ finite automata
+    algorithm(s)}
+\item{Use of language to describe checkers and mutators in CrashSimulator
+    that resulted in the identification of YYY new bugs.}
+\item{Results from a user study using the above implementation that show the
+language is easier for user to learn and use.}
+\end{enumerate}
+
+\section{Related Work}
+
+\begin{enumerate}
+    \item{\textit{https://www.cs.unm.edu/~forrest/publications/jcs-sequences-of-system-calls-98.pdf}\break
+        Uses system call sequences (without examining parameters etc, specific concrete
+        sequences only) to detect malicious behavior}
+    \item{\textit{https://pdfs.semanticscholar.org/df3b/6e275f8e1885e7bc922afb19b012dba84635.pdf}\break
+Uses non-sequenced system call data to detect anomalous behavior
+        statistically}
+    \item{\textit{https://arxiv.org/pdf/1707.03821.pdf}\break
+Classifies misbehavior by counts of system calls in a given period of time using
+        machine learning}
+    \item{\textit{https://arxiv.org/pdf/1002.0432.pdf}\break
+        Proposes a regular expression-like language for system call “motifs”}
+\end{enumerate}
+
+\end{document}
